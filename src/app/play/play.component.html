@@ -1,0 +1,115 @@
+
+<div class="container">
+        <div class="row">
+      <section class="section-features">
+          <div class="body-row" style="margin-top: 200px;" *ngIf="!signalStatus">
+            <ngx-loading [show]="loading"></ngx-loading>
+                <flash-messages></flash-messages>
+                <div class="mobile-one">
+                    <p *ngIf="!loggedInStatus" class="alert alert-info">Please <b><a [routerLink]="['/login']" style="color: #0541E8;">Log in</a></b> or <b><a [routerLink]="['/register']" style="color: #0541E8;">Register</a></b> to play!</p>
+                </div>
+                <div class="desktop-one">
+                    <p *ngIf="!loggedInStatus" class="alert alert-info">Please <b><a [routerLink]="['/']" style="color: #0541E8;">Log in</a></b> or <b><a [routerLink]="['/register']" style="color: #0541E8;">Register</a></b> to play!</p>
+                </div>
+
+    <h3 style="color: black; text-align: center;">{{drawDate}} Draws</h3>
+                    <div class="col-lg-4 col-sm-12 col-md-12">
+                            <div class="mini-header1" style="background: navy;">
+                                    <div class="sticker1"><h4 style="padding-right: auto;padding-top: 40%;"><b>Stake &#8358;25</b></h4></div>
+                    <h3 class="win-label1">WIN <span style="color: red;">&#8358;25,000</span></h3>
+                        <br><br>
+        <small style="margin-left: 12%; padding-right: 1%;color: #ffffff;">Draw Time: {{drawDate}}. <countdown-timer style="color:red;" (zeroTrigger)="afterCountDown()" [end]="newCount"></countdown-timer></small>
+        <div style="padding-left: 10%;">
+            <form class="form-inline" [formGroup]="angForm1" novalidate (ngSubmit)="registerGame(angForm1, 25, '25000')">
+                    <div class="form-group" *ngIf="loggedInStatus">
+                        <input type="text" placeholder="Enter phone number here" minlength="11" maxlength="11" class="form-control" formControlName="mobile_no" #mobile_no />
+                    </div>
+                        <button style="margin-top: 1%"
+                            [disabled]="angForm1.pristine || angForm1.invalid" 
+                            class="btn btn-success">PLAY !</button>
+                            <div *ngIf="angForm1.controls['mobile_no'].invalid && (angForm1.controls['mobile_no'].dirty || angForm1.controls['mobile_no'].touched)" >
+                                <div *ngIf="angForm1.controls['mobile_no'].errors.required">
+                                    <small style="color: white" class="form-text text-muted">Enter a phone number to generate a ticket.</small>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+                <div class="col-lg-4 col-sm-12 col-md-12">
+                        <div class="mini-header1" style="background: darkorange;">
+                                <div class="sticker2"><h4 style="padding-right: auto;padding-top: 40%;"><b>Stake &#8358;50</b></h4></div>
+                        <h3 class="win-label2"><span style="color: darkorange">WIN </span> <span style="color: #fff;">&#8358;50,000</span></h3>
+                        <br><br>
+                        <small style="margin-left: 12%; padding-right: auto;color: #ffffff;">Draw Time: {{drawDate}}. <countdown-timer style="color:black;" (zeroTrigger)="afterCountDown()" [end]="newCount"></countdown-timer></small>
+                        <div style="padding-left: 10%;">
+                                <form class="form-inline" [formGroup]="angForm2" novalidate (ngSubmit)="registerGame(angForm2, 50, '50000')">
+                                    <div class="form-group" *ngIf="loggedInStatus">
+                                        <input type="text" placeholder="Enter phone number here" minlength="11" maxlength="11" class="form-control" formControlName="mobile_no" #mobile_no />
+                                  </div>
+                                    <button style="margin-top: 1%"
+                                      [disabled]="angForm2.pristine || angForm2.invalid" 
+                                      class="btn btn-success">PLAY !</button>
+                                      <div *ngIf="angForm2.controls['mobile_no'].invalid && (angForm2.controls['mobile_no'].dirty || angForm2.controls['mobile_no'].touched)" >
+                                          <div *ngIf="angForm2.controls['mobile_no'].errors.required">
+                                             <small style="color: black" class="form-text text-muted">Enter a phone number to generate a ticket.</small>
+                                            </div>
+                                        </div>
+                              </form>
+                        </div>
+                </div>
+        </div>
+                <div class="col-lg-4 col-sm-12 col-md-12">
+                        <div class="mini-header1" style="background: purple;">
+                                <div class="sticker3"><h4 style="padding-right: auto;padding-top: 40%;"><b>Stake &#8358;100</b></h4></div>
+                <h3 class="win-label3">WIN <span style="color: red;">&#8358;100,000</span></h3>
+                <br><br>
+                    <small style="margin-left: 12%; padding-right: 1%;color: #ffffff;">Draw Time: {{drawDate}}. <countdown-timer style="color:red;" (zeroTrigger)="afterCountDown()" [end]="newCount"></countdown-timer></small>
+                <div style="padding-left: 10%;">
+                        <form class="form-inline" [formGroup]="angForm3" novalidate (ngSubmit)="registerGame(angForm3, 100, '100000')">
+                        <div class="form-group" *ngIf="loggedInStatus">
+                            <input type="text" placeholder="Enter phone number here" minlength="11" maxlength="11" class="form-control" formControlName="mobile_no" #mobile_no />
+                            </div>
+                            <button style="margin-top: 1%"
+                                [disabled]="angForm3.pristine || angForm3.invalid" 
+                                class="btn btn-success">PLAY !</button>
+                                <div *ngIf="angForm3.controls['mobile_no'].invalid && (angForm3.controls['mobile_no'].dirty || angForm3.controls['mobile_no'].touched)" >
+                                    <div *ngIf="angForm3.controls['mobile_no'].errors.required">
+                                        <small style="color: white" class="form-text text-muted">Enter a phone number to generate a ticket.</small>
+                                    </div>
+                                </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 col-md-12">
+                        <h3 style="color: black;"><span class="glyphicon glyphicon-tasks"></span>&nbsp;UPCOMING DRAWS</h3>
+                        <div class="col-lg-12 col-sm-12 col-md-12" id="each-game-frame" *ngFor="let one of testing">
+                                <div *ngFor="let each of one" style="margin-top: 3%;">
+                                <a [routerLink]="['/play']" [queryParams]="{id: each.draw_id}">  
+                                    <div class="mini-header2">
+                                        <p style=" margin-top: 1%; color: black;"><span class="glyphicon glyphicon-time"></span>&nbsp;{{each.draw_date}} Draws<span style="float: right;">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+        </div>
+        <div class="col-lg-6 col-sm-12 col-md-12" style="color: black;" id="each-frame">
+            <h3><span class="glyphicon glyphicon-question-sign"></span>&nbsp;HOW TO PLAY</h3>
+            <p>To participate in a draw, register or login and fund your account. Get 100% Welcome Bonus on your first deposit and 20% bonus on deposits of #1,000 and above. Having done that, enter your mobile number under a draw category of your choice and click <b>PLAY!</b></p>
+            <p>The stake will be deducted from your account and a UNIQUE Ticket Number will be generated for you. This Ticket Number qualifies you for the stated winning. After a draw closes, our bespoke lottery machine shuffles all ticket numbers generated for that draw and picks the winning ticket numbers at random.</p>
+            <p>Draws close by 6pm and winners are selected and posted on our website by 6:30pm. The accounts associated with the successful ticket numbers are credited instantly.</p>
+            <p><b>Play multiple times to increase your chances of winning!</b></p>
+            <a href="#" class="android-btn-app"><img src="../../assets/images/android.png" style="height: 45px" alt="Play store button"> </a>
+            <a href="#" class="ios-btn-app"><img src="../../assets/images/ios.svg" style="height: 45px" alt="App store button "> </a>
+        </div>
+    </div>
+    <div class="body-row" style="margin-top: 200px;" *ngIf="signalStatus">
+        <h3 style="text-align:center; padding: 2% 2%; border-radius:5px; border: 2px solid black;">DRAW CLOSED</h3>
+    </div>
+</section>
+</div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container" style="margin-top: 10%;">
+  <div class="row">
+    <section class="section-features">
+      <div class="body-row" *ngIf="transactions">
+        <div *ngFor="let eachTransaction of transactions">
+          <ul [ngClass]="{'green': eachTransaction.transaction_type == 'deposit', 'red': eachTransaction.transaction_type == 'withdrawal', 'red-stake': eachTransaction.transaction_type == 'stake'}" >
+          <p style="font-weight:bold">
+            <span *ngIf="eachTransaction.transaction_type == 'deposit'" class="glyphicon glyphicon-forward" aria-hidden="true"></span>
+            <span *ngIf="eachTransaction.transaction_type == 'withdrawal'" class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+            <span *ngIf="eachTransaction.transaction_type == 'stake'" class="glyphicon glyphicon-backward" aria-hidden="true"></span>
+            &nbsp;&nbsp;&nbsp;{{eachTransaction.transaction_type}}
+        </p>
+          <!-- <p style="padding-left: 6%">Type: {{eachTransaction.transaction_type}}</p> -->
+          <p style="padding-left: 6%">Amount: {{eachTransaction.amount_involved}}</p>
+          <p style="padding-left: 6%">Balance: {{eachTransaction.acct_balance}}</p>
+          <p style="padding-left: 6%">Date: {{eachTransaction.time_stamp | date:'medium'}}</p>
+            </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+  

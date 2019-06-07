@@ -1,0 +1,22 @@
+<div class="container" style="margin-top: 200px; float: center;">
+  <ngx-loading [show]="loading"></ngx-loading>
+  <div class="row">
+      <section class="section-features">
+        <div class="body-row">
+          <h3 style="text-align:center; color: #FEBF00;">ENTER CREDIT CARD DETAILS</h3>
+        <!-- <div class="col-lg-12 col-md-12 col-sm-12"> -->
+              <angular4-paystack-embed 
+              style="background-color: #fff;margin-bottom: 5%; width:80%; margin-left:10%; margin-right:10%;"
+              [key]="'pk_live_ea985dc0232ca4ef5c16730e2f0f6aa7465bdd32'"
+              [email]="'mailexample@mail.com'"
+              [amount]="depositAmount"
+              [ref]="reference"
+              [class]="'btn btn-primary'"
+              (callback)="depo()"
+            ></angular4-paystack-embed>
+      <!-- </div> -->
+    </div>
+  </section>
+</div>
+</div>
+

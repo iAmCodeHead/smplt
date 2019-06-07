@@ -1,0 +1,128 @@
+<div class="desktop-one">
+<ngx-loading [show]="loading"></ngx-loading>
+<!-- <flash-messages></flash-messages> -->
+<div style="color: black" id="login-form" *ngIf="!forgotPwd">
+    <!-- <flash-messages></flash-messages> -->
+<h3><span class="glyphicon glyphicon-log-in"></span>&nbsp; LOG IN</h3>
+<!-- <flash-messages></flash-messages> -->
+<small style="color: red;">*Fields are case sensitive</small>
+<flash-messages></flash-messages>
+<form class="form-horizontal" [formGroup]="angForm" novalidate (ngSubmit)="loginSubmit()">
+    <div class="form-group">
+        <div class="form-group">
+            <label>Username / Phone number </label>
+            <input type="text" minlength="3" class="form-control" formControlName="username" #username />
+          </div>
+          <div *ngIf="angForm.controls['username'].invalid && (angForm.controls['username'].dirty || angForm.controls['username'].touched)" style="color: red">
+            <div *ngIf="angForm.controls['username'].errors.required">
+                Username is required (Not less than 3 letters).
+              </div>
+          </div>
+          <div class="form-group">
+              <label>Password </label>
+              <input type="password" minlength="6" class="form-control" formControlName="password" #password />
+            </div>
+            <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" style="color: red">
+              <div *ngIf="angForm.controls['password'].errors.required">
+                  Password is required (Not less than 6 characters).
+                </div>
+            </div>
+           </div>
+           <div class="form-group">
+              <button
+              [disabled]="angForm.pristine || angForm.invalid" 
+              class="btn btn-primary" style="background-color: black; color:#fff;">Log in</button>
+              <span style="color: #fff; padding-top:4%; float: right; margin-right: 6%;"><a style="color: blueviolet;" (click)="forgotPassword()">Forgot Password?</a><br></span>
+              <p style="color: black;">Don't have an account? <a [routerLink]="['/register']" style="color: blueviolet;">register now!</a></p>
+            </div>
+  </form>
+  <i style="color: black; font-weight: bold; display: inline;">...play simple, win easy!</i>
+</div>
+<div id="reset-form" style="margin: 7%;" *ngIf="forgotPwd">
+    <h3 style="color: black"><span class="glyphicon glyphicon-lock"></span>&nbsp;FORGOT PASSWORD</h3>
+    <small style="color: red;">*Enter your registered email address / Phone number</small>
+  <form class="form-horizontal" [formGroup]="resetFormField" novalidate (ngSubmit)="resetSubmit()">
+      <div class="form-group col-lg-12 col-sm-12 col-md-12">
+        <div style="color: black" class="form-group">
+          <label class="col-md-12">Email Address / Phone number</label>
+          <input type="text" minlength="9" class="form-control" formControlName="username" #username />
+        </div>
+        <div *ngIf="resetFormField.controls['username'].invalid && (resetFormField.controls['username'].dirty || resetFormField.controls['username'].touched)" style="color: red">
+          <div *ngIf="resetFormField.controls['username'].errors.required">
+              Enter registered e-mail address or phone number.
+            </div>
+        </div>
+        <div class="form-group">
+            <button
+            [disabled]="resetFormField.pristine || resetFormField.invalid" 
+            class="btn btn-primary" style="background-color: black; color: #fff;">Reset</button>
+        </div>
+      </div>
+  </form>
+  <i style="color: black; font-weight: bold; display: inline;">...play simple, win easy!</i>
+</div>
+</div>
+
+
+  <div class="mobile-one">
+      <ngx-loading [show]="loading"></ngx-loading>
+      <div style="color: black; margin-top: 200px;" id="login-form" *ngIf="!forgotPwd">
+        <h3><span class="glyphicon glyphicon-log-in"></span>&nbsp; LOG IN</h3>
+  <small style="color: red;">*Fields are case sensitive</small>
+  <flash-messages></flash-messages>
+  <form class="form-horizontal" [formGroup]="angForm" novalidate (ngSubmit)="loginSubmit()">
+      <div class="form-group col-lg-12 col-md-12 col-sm-12">
+          <div class="form-group">
+              <label>Username / Phone number </label>
+              <input type="text" minlength="3" class="form-control" formControlName="username" #username />
+            </div>
+            <div *ngIf="angForm.controls['username'].invalid && (angForm.controls['username'].dirty || angForm.controls['username'].touched)" style="color: red">
+              <div *ngIf="angForm.controls['username'].errors.required">
+                  Username is required (Not less than 3 letters).
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Password </label>
+                <input type="password" minlength="6" class="form-control" formControlName="password" #password />
+              </div>
+              <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" style="color: red">
+                <div *ngIf="angForm.controls['password'].errors.required">
+                    Password is required (Not less than 6 characters).
+                  </div>
+              </div>
+             </div>
+             <div class="form-group">
+                <button
+                [disabled]="angForm.pristine || angForm.invalid" 
+                class="btn btn-primary" style="background-color: black; color:#fff;">Log in</button>
+                <span style="color: #fff; padding-top:4%; float: right; margin-right: 6%;"><a style="color: blueviolet;" (click)="forgotPassword()">Forgot Password?</a><br></span>
+                <p style="color: black;">Don't have an account? <a [routerLink]="['/register']" style="color: blueviolet;">register now!</a></p>
+              </div>
+    </form>
+    <i style="color: black; font-weight: bold; display: inline;">...play simple, win easy!</i>
+  </div>
+  <div id="reset-form" style="margin-top: 200px;" *ngIf="forgotPwd">
+      <h3 style="color: black"><span class="glyphicon glyphicon-lock"></span>&nbsp;FORGOT PASSWORD</h3>
+      <flash-messages></flash-messages>
+      <small style="color: red;">*Enter your registered email address / Phone number</small>
+    <form class="form-horizontal" [formGroup]="resetFormField" novalidate (ngSubmit)="resetSubmit()">
+        <div class="form-group col-lg-12 col-sm-12 col-md-12">
+          <div style="color: black" class="form-group">
+            <label class="col-md-12">Email Address / Phone number</label>
+            <input type="text" minlength="9" autofocus class="form-control" formControlName="username" #username />
+          </div>
+          <div *ngIf="resetFormField.controls['username'].invalid && (resetFormField.controls['username'].dirty || resetFormField.controls['username'].touched)" style="color: red">
+            <div *ngIf="resetFormField.controls['username'].errors.required">
+                Enter registered e-mail address or phone number.
+              </div>
+          </div>
+          <div class="form-group">
+              <button
+              [disabled]="resetFormField.pristine || resetFormField.invalid" 
+              class="btn btn-primary" style="background-color: black; color: #fff;">Reset</button>
+          </div>
+        </div>
+    </form>
+    <i style="color: black; font-weight: bold; display: inline;">...play simple, win easy!</i>
+  </div>
+</div>

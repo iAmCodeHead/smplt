@@ -1,0 +1,118 @@
+<div class="container" style="margin-bottom: 10%;">
+        <div class="row">
+      <section [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact : true}" class="section-features">
+          <div class="body-row" style="margin-top: 10%">
+    <div class="col-lg-4 col-xs-12 col-md-12 col-sm-12" id="main-login">
+        <div *ngIf="!loggedInStatus">
+            <app-login></app-login>
+        </div>
+        <div *ngIf="loggedInStatus">
+            <h3 style="color: black"><span class="glyphicon glyphicon-tasks"></span>&nbsp;UPCOMING DRAWS</h3>
+            <div class="col-lg-12 col-sm-12 col-md-12" id="each-game-frame" *ngFor="let one of testing">
+                <div *ngFor="let each of one" style="margin-top: 3%;">
+                <a [routerLink]="['/play']" [queryParams]="{id: each.draw_id}">  
+                    <div class="mini-header2">
+                        <p style=" margin-top: 1%; color: black;"><span class="glyphicon glyphicon-time"></span>&nbsp;{{each.draw_date}} Draws<span style="float: right;">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            </span>
+                        </p>
+                    </div>
+                </a>
+                </div>
+            </div>
+                <i style="color: black; font-weight: bold; display: inline;">...play simple, win easy!</i>
+            </div>
+      <!-- <img src="../../assets/images/001.jpg" title="Play Simple, Win Easy!" style="max-width: 25%; max-height: 25%; margin-left: 0%;"> -->
+    </div>
+    
+    
+    
+              <div class="col-lg-1 col-xs-12 col-sm-12 col-md-12"></div>
+              <div class="col-lg-7 col-sm-12 col-md-12" id="each-mobile-frame" style="margin-top: 150px;">
+                  <ul class="nav navbar-nav" id="footer_wrapper">
+                      <li class="dropdown" id="htp_dropdown">
+                      <a  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-question-sign"></span>&nbsp;HOW TO PLAY<span class="glyphicon glyphicon-chevron-down" style="float: right; margin-top: 1%"></span></a>
+                      <ul id="htp_dropdown_list" class="dropdown-menu">
+                          <p>To participate in a draw, register or login and fund your account. Get 100% Welcome Bonus on your first deposit and 20% bonus on deposits of #1,000 and above!</p>
+                          <p>Having done that, enter your mobile number under a draw category of your choice and click <b>PLAY!</b></p>
+                          <p>The stake will be deducted from your account and a UNIQUE TICKET ID will be generated for you. This UNIQUE TICKET ID qualifies you for the stated winning. All your tickets are available in your dashboard.</p>
+                          <p>After a draw closes, our bespoke lottery machine shuffles all ticket IDs generated for that draw and picks the winning ticket IDs at random.</p>
+                          <p>All draws close by 6pm and winning ticket IDs are selected and published on our website UNDER <b>WINNERS</b>.Winners' accounts are credited instantly with their winnings.</p>
+                          <p><b>Play multiple times to increase your chances of winning!</b></p>
+                          <a href="#" class="android-btn-app"><img src="../../assets/images/android.png" style="height: 50px" alt="Play store button"> </a>
+                          <a href="#" class="ios-btn-app"><img src="../../assets/images/ios.svg" style="height: 50px" alt="App store button "> </a>
+                          <br>
+                          <a href="#"><button type="submit" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color:black; margin-top: 5%; margin-left: 40%;;">Ok, Got it!</button></a>
+                        </ul>
+                      </li>
+                      </ul>
+              </div>
+              <div class="col-lg-7 col-sm-12 col-md-12" style="color: black;" id="each-frame">
+                      <h3><span class="glyphicon glyphicon-question-sign"></span>&nbsp;HOW TO PLAY</h3>
+                      <p>To participate in a draw, register or login and fund your account. Get 100% Welcome Bonus on your first deposit and 20% bonus on deposits of #1,000 and above!</p>
+                      <p>Having done that, enter your mobile number under a draw category of your choice and click <b>PLAY!</b></p>
+                      <p>The stake will be deducted from your account and a UNIQUE TICKET ID will be generated for you. This UNIQUE TICKET ID qualifies you for the stated winning. All your tickets are available in your dashboard.</p>
+                      <p>After a draw closes, our bespoke lottery machine shuffles all ticket IDs generated for that draw and picks the winning ticket IDs at random.</p>
+                      <p>All draws close by 6pm and winning ticket IDs are selected and published on our website UNDER <b>WINNERS</b>.Winners' accounts are credited instantly with their winnings.</p>
+                      <p><b>Play multiple times to increase your chances of winning!</b></p>
+                      <a href="#" class="android-btn-app"><img src="../../assets/images/android.png" style="height: 50px" alt="Play store button"> </a>
+                      <a href="#" class="ios-btn-app"><img src="../../assets/images/ios.svg" style="height: 50px" alt="App store button "> </a>
+              </div>
+    
+    
+              <div class="col-lg-4 col-sm-12 col-md-12" style="color: black;" id="each-frame">
+                    <h3><span class="glyphicon glyphicon-home"></span>&nbsp; ABOUT US</h3>
+                    <p>One major challenge lottery players in Nigeria face is the difficulty in forecasting the winning numbers to be drawn by lottery machines and this has made a lot of players unhappy over the years.</p>
+                    <p>In a bid to change this narrative, put smiles on the faces of lottery players, and give everyone an equal chance of winning without stress, Simple Touch Applications Limited launches Simple Lotto!</p>
+                    <p>Simple Lotto is an interesting, bi-gender friendly lottery model that gives you a chance to win big with small stakes, without worrying about numbers! All that is needed to play is a phone number!</p>
+                    <p>When you enter your phone number and click PLAY, a UNIQUE TICKET ID will be generated for you. This unique ticket ID qualifies you for the stated winning -that's all!</p>
+                    <p>When that game closes by 6pm, all Ticket IDs generated are shuffled by our bespoke lottery machine and winning Ticket IDs are selected and published on our website under "WINNERS".</p>
+                    <p>When you win, your account is credited instantly!  Simple, right? We know!</p>
+                    <h3 style="color: black"><span class="glyphicon glyphicon-gift"></span>&nbsp; BONUSES</h3>
+                    <p>You get <b>100% Welcome Bonus</b> on your first deposit and <b>20% Bonus</b> on subsequent deposits of <b>&#8358; 1,000</b> and above. Anytime you get a bonus on your deposit, both the main amount deposited and the bonus added would be merged together in your bonus account.</p>
+                    <p>Funds/stakes will be deducted from your bonus account first, before your main account <b>except</b> when there are no funds in the bonus account. Every time you win, your main account will be credited with your winnings instantly.</p>
+              </div>
+              <div class="col-lg-1 col-xs-12 col-sm-12 col-md-12"></div>
+              <div class="col-lg-7 col-xs-12 col-md-12 col-sm-12" id="main-login">
+                        <h3 style="color: black"><span class="glyphicon glyphicon-tasks"></span>&nbsp;UPCOMING DRAWS</h3>
+                        <div class="col-lg-12 col-sm-12 col-md-12" id="each-game-frame" *ngFor="let one of testing">
+                                <div *ngFor="let each of one" style="margin-top: 3%;">
+                                <a [routerLink]="['/play']" [queryParams]="{id: each.draw_id}">  
+                                    <div class="mini-header2">
+                                        <p style=" margin-top: 1%; color: black;"><span class="glyphicon glyphicon-time"></span>&nbsp;{{each.draw_date}} Draws<span style="float: right;">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </a>
+                                </div>
+                            </div>
+                            <h3 style="color: black"><span class="glyphicon glyphicon-time"></span>&nbsp; Monthly Jackpot</h3>
+                            <p>On the last day of every month, starting from June, 2019, there is a Monthly Jackpot of <b>&#8358; 100,000</b>. This Monthly Jackpot is free and opened to everyone who played <b>at least once in that month</b>. To select the Jackpot Winner, All TICKET IDs generated for ALL Simple Lotto Draws in that month are shuffled by our bespoke lottery machine and 1 (one) Ticket ID is picked!</p>
+                            <p>The account associated with the ticket ID is credited with ₦100,000 instantly!</p>
+                </div>
+            </div>
+            <div class="mobile-one">
+     <div class="body-row">
+            <div class="col-lg-3 col-sm-12 col-md-12" id="each-game-frame" *ngFor="let one of testing">
+                    <div *ngFor="let each of one" style="margin-top: 3%;">
+                    <a [routerLink]="['/play']" [queryParams]="{id: each.draw_id}">  
+                        <div class="mini-header2" style="color: black;">
+                                <p>{{each.draw_date}} Draws<span style="float: right; margin-top: 1%">
+                                        <span class="glyphicon glyphicon-chevron-right"></span>
+                                </span>
+                            </p>
+                            <div class="game-text-box">
+                                    <p>{{each.draw_date}} Draws</p>
+                            </div>
+                        </div>
+                    </a>
+                    </div>
+                </div>
+     </div>
+    </div>
+          </section>
+        </div>
+    </div>
+    <app-footer></app-footer>
+    

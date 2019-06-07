@@ -1,0 +1,90 @@
+<div class="container" style="margin-top: 200px;">
+    <div class="row">
+      <section class="section-features" style="margin-left: 2%; margin-right: 2%;">
+        <ngx-loading [show]="loading"></ngx-loading>
+        <ul class="nav nav-tabs">
+                <li class="active">
+                    <a style="color: black;" (click)="menu1()">&#8358;25,000 Winners</a>
+                </li>
+                <li>
+                    <a style="color: black;"  (click)="menu2()">&#8358;50,000 Winners</a>
+                </li>
+                <li>
+                    <a style="color: black;" (click)="menu3()">&#8358;100,000 Winners</a>
+                </li>
+            </ul>
+        <div class="body-row" *ngIf="menu1Signal">
+            <form>
+                <label style="color: black">Filter tickets by ID (&#8358; 25):</label>
+                <input type="text" class="form-control" [(ngModel)]="term" [ngModelOptions]="{standalone: true}" />
+              </form>
+              <hr>
+               <!-- <div  *ngFor="let eachWinner of winningTickets" id="winning-frame" class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+                  <ul>
+                      <li>DATE: {{eachWinner.draw_date}}</li>
+                      <li>TICKET ID: {{eachWinner._id}}</li>
+                      <li>GAME ID: {{eachWinner.game_id}}</li>
+                    <li>AMOUNT WON:<span style="color: green; font-weight: 400"> {{eachWinner.potential_winning | currency:"&#8358;"}}</span></li>
+                    </ul>
+            </div> -->
+            <legend style="color: black" *ngIf="recent25kWinningTickets">WINNING TICKETS</legend>
+                <ul *ngFor="let eachTicket of recent25kWinningTickets | filter: term" style="font-weight: 500;" class="green">
+                <li>TICKET ID: {{eachTicket.ticket_id | filter}}</li>
+                <li>DATE: {{eachTicket.draw_date}}</li>
+                <li>GAME ID: {{eachTicket.game_id}}</li>
+                <li>STAKE: &#8358; {{eachTicket.stake_amt}}</li>
+                <li>AMOUNT WON:<span style="color: green; font-weight: bolder"> {{eachTicket.potential_winning | currency:"&#8358;"}}</span></li>
+                </ul>
+          </div>
+
+          <div class="body-row" *ngIf="menu2Signal">
+                <form>
+                    <label style="color: black">Filter tickets by ID (&#8358; 50):</label>
+                    <input type="text" class="form-control" [(ngModel)]="term" [ngModelOptions]="{standalone: true}" />
+                  </form>
+                  <hr>
+                   <!-- <div  *ngFor="let eachWinner of winningTickets" id="winning-frame" class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+                      <ul>
+                          <li>DATE: {{eachWinner.draw_date}}</li>
+                          <li>TICKET ID: {{eachWinner._id}}</li>
+                          <li>GAME ID: {{eachWinner.game_id}}</li>
+                        <li>AMOUNT WON:<span style="color: green; font-weight: 400"> {{eachWinner.potential_winning | currency:"&#8358;"}}</span></li>
+                        </ul>
+                </div> -->
+                <legend style="color: black" *ngIf="recent50kWinningTickets">WINNING TICKETS</legend>
+                    <ul *ngFor="let eachTicket of recent50kWinningTickets | filter: term" style="font-weight: 500;" class="green">
+                    <li>TICKET ID: {{eachTicket.ticket_id | filter}}</li>
+                    <li>DATE: {{eachTicket.draw_date}}</li>
+                    <li>GAME ID: {{eachTicket.game_id}}</li>
+                    <li>STAKE: &#8358; {{eachTicket.stake_amt}}</li>
+                    <li>AMOUNT WON:<span style="color: green; font-weight: bolder"> {{eachTicket.potential_winning | currency:"&#8358;"}}</span></li>
+                    </ul>
+              </div>
+
+              <div class="body-row" *ngIf="menu3Signal">
+                    <form>
+                        <label style="color: black">Filter tickets by ID (&#8358; 100):</label>
+                        <input type="text" class="form-control" [(ngModel)]="term" [ngModelOptions]="{standalone: true}" />
+                      </form>
+                      <hr>
+                       <!-- <div  *ngFor="let eachWinner of winningTickets" id="winning-frame" class="col-lg-12 col-xs-12 col-md-12 col-sm-12">
+                          <ul>
+                              <li>DATE: {{eachWinner.draw_date}}</li>
+                              <li>TICKET ID: {{eachWinner._id}}</li>
+                              <li>GAME ID: {{eachWinner.game_id}}</li>
+                            <li>AMOUNT WON:<span style="color: green; font-weight: 400"> {{eachWinner.potential_winning | currency:"&#8358;"}}</span></li>
+                            </ul>
+                    </div> -->
+                    <legend style="color: black" *ngIf="recent100kWinningTickets">WINNING TICKETS</legend>
+                        <ul *ngFor="let eachTicket of recent100kWinningTickets | filter: term" style="font-weight: 500;" class="green">
+                        <li>TICKET ID: {{eachTicket.ticket_id | filter}}</li>
+                        <li>DATE: {{eachTicket.draw_date}}</li>
+                        <li>GAME ID: {{eachTicket.game_id}}</li>
+                        <li>STAKE: &#8358; {{eachTicket.stake_amt}}</li>
+                        <li>AMOUNT WON:<span style="color: green; font-weight: bolder"> {{eachTicket.potential_winning | currency:"&#8358;"}}</span></li>
+                        </ul>
+                  </div>
+        </section>
+    </div>
+</div>
+              
