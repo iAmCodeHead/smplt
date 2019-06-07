@@ -28,7 +28,7 @@
     "angular2-flash-messages": "3.0.1",
     "angular2-jwt": "0.2.3",
     "angular4-paystack": "2.3.2",
-    "axios": "0.18.0",
+    "axios": "0.18.1",
     "bcryptjs": "*",
     "bluebird": "^3.5.4",
     "body-parser": "*",
