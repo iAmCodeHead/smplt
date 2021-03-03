@@ -60,7 +60,7 @@
     "passport-jwt": "*",
     "paystack": "2.0.1",
     "paystack-api": "2.0.1",
-    "pug": "2.0.3",
+    "pug": "3.0.1",
     "querystring": "0.2.0",
     "request": "2.88.0",
     "rxjs": "6.3.3",
