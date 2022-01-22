@@ -54,7 +54,7 @@
     "ngx-loading": "3.0.1",
     "ngx-socket-io": "2.1.1",
     "node-cron": "2.0.3",
-    "node-fetch": "2.3.0",
+    "node-fetch": "3.1.1",
     "nodemailer": "5.1.1",
     "passport": "*",
     "passport-jwt": "*",
