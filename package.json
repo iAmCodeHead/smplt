@@ -42,7 +42,7 @@
     "handlebars": "^4.1.2",
     "helmet": "^3.18.0",
     "jsonwebtoken": "*",
-    "moment": "2.23.0",
+    "moment": "2.29.2",
     "mongodb": "3.1.11",
     "mongodb-cron": "1.4.0",
     "mongoose": "*",
